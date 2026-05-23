@@ -10,6 +10,24 @@ Before starting, ensure you have:
 
 1. **Java 21 or higher** - [Download from Oracle](https://www.oracle.com/java/technologies/downloads/)
    - Verify: `java -version`
+   - **Set JAVA_HOME** (if Maven doesn't find Java):
+     ```powershell
+     # Find your Java installation path
+     Get-Command java | Select-Object Source
+     
+     # Set JAVA_HOME for current PowerShell session
+     $env:JAVA_HOME="C:\Program Files\Java\jdk-21"
+     
+     # Verify it's set
+     echo $env:JAVA_HOME
+     ```
+   - **Permanent Setup** (recommended):
+     1. Search Windows for "Environment Variables"
+     2. Click "Environment Variables" button
+     3. Under "System variables", click "New"
+     4. Variable name: `JAVA_HOME`
+     5. Variable value: `C:\Program Files\Java\jdk-21` (your actual JDK path)
+     6. Click OK and restart PowerShell
    
 2. **Docker Desktop for Windows** - [Download here](https://www.docker.com/products/docker-desktop/)
    - Verify: `docker --version`

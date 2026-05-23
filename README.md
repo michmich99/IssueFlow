@@ -31,7 +31,7 @@ A RESTful backend API for managing projects, tickets, and comments with JWT-base
 - **Concurrent Updates**: Optimistic locking prevents simultaneous edits
 - **Validation**: All inputs validated before processing
 
-## 📊 Project Statistics
+## Project Statistics
 
 - **Total Files**: 120+
 - **Lines of Code**: ~8,000+

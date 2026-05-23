@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: issueflow
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/issueflow
+    username: issueflow
+    password: issueflow123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000
+
+logging:
+  level:
+    com.issueflow: INFO
+    org.hibernate.SQL: DEBUG
+    org.springframework.security: DEBUG
+
+file:
+  upload-dir: uploads
+  max-size: 10485760

@@ -2,28 +2,28 @@
 
 A RESTful backend API for managing projects, tickets, and comments with JWT-based authentication.
 
-## 🚀 Features
+## Features
 
-### Core Features (✅ 100% README Compliant)
-- ✅ **User Management** - Register, update, and manage users with role-based access (ADMIN, DEVELOPER)
-- ✅ **JWT Authentication** - Secure stateless authentication with JWT tokens (accessToken, tokenType, expiresIn)
-- ✅ **Project Management** - Create and manage projects with ownership
-- ✅ **Ticket Management** - Create, update, and track tickets with status workflow, dueDate, and isOverdue tracking
-- ✅ **Comment System** - Add and manage comments on tickets
-- ✅ **Input Validation** - Comprehensive validation on all API endpoints
-- ✅ **Error Handling** - Consistent error responses with detailed messages
-- ✅ **Optimistic Locking** - Prevent concurrent update conflicts
+### Core Features
+- **User Management** - Register, update, and manage users with role-based access (ADMIN, DEVELOPER)
+- **JWT Authentication** - Secure stateless authentication with JWT tokens (accessToken, tokenType, expiresIn)
+- **Project Management** - Create and manage projects with ownership
+- **Ticket Management** - Create, update, and track tickets with status workflow, dueDate, and isOverdue tracking
+- **Comment System** - Add and manage comments on tickets
+- **Input Validation** - Comprehensive validation on all API endpoints
+- **Error Handling** - Consistent error responses with detailed messages
+- **Optimistic Locking** - Prevent concurrent update conflicts
 
-### Extended Features (✅ 100% Implemented - 9/9)
-- ✅ **Audit Log** - Track all state changes (CREATE, UPDATE, DELETE, RESTORE) with actor and timestamp
-- ✅ **Ticket Dependencies** - Manage blocking relationships between tickets
-- ✅ **File Attachments** - Upload and manage file attachments on tickets (max 10MB)
-- ✅ **CSV Export/Import** - Bulk ticket operations via CSV files
-- ✅ **Soft Delete** - Soft delete projects and tickets with restore capability (ADMIN only)
-- ✅ **@Mentions** - Parse and track @username mentions in comments with notifications
-- ✅ **Workload Tracking** - View developer workload by project
-- ✅ **Auto-Escalation** - Automatic priority escalation for overdue tickets (hourly scheduler)
-- ✅ **Auto-Assignment** - Automatically assign tickets to least-loaded developers
+### Extended Features
+- **Audit Log** - Track all state changes (CREATE, UPDATE, DELETE, RESTORE) with actor and timestamp
+- **Ticket Dependencies** - Manage blocking relationships between tickets
+- **File Attachments** - Upload and manage file attachments on tickets (max 10MB)
+- **CSV Export/Import** - Bulk ticket operations via CSV files
+- **Soft Delete** - Soft delete projects and tickets with restore capability (ADMIN only)
+- **@Mentions** - Parse and track @username mentions in comments with notifications
+- **Workload Tracking** - View developer workload by project
+- **Auto-Escalation** - Automatic priority escalation for overdue tickets (hourly scheduler)
+- **Auto-Assignment** - Automatically assign tickets to least-loaded developers
 
 ### Business Rules
 - **Status Workflow**: TODO → IN_PROGRESS → IN_REVIEW → DONE (no backward transitions)
@@ -40,7 +40,7 @@ A RESTful backend API for managing projects, tickets, and comments with JWT-base
 - **Database Tables**: 9
 - **Extended Features**: 9/9 (100% Complete)
 
-## 🎯 Extended Features Highlights
+## Extended Features Highlights
 
 ### Audit Log System
 Every create, update, delete, and restore action is logged with:
@@ -82,7 +82,7 @@ Every create, update, delete, and restore action is logged with:
 - Import tickets in bulk with validation
 - Returns detailed error report for failed imports
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Java 21**
 - **Spring Boot 3.3.0**
@@ -93,7 +93,7 @@ Every create, update, delete, and restore action is logged with:
 - **Bean Validation**
 - **JUnit 5 & Mockito**
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 issueflow/
@@ -111,7 +111,7 @@ issueflow/
 └── src/test/            # Test files
 ```
 
-## 🚦 Quick Start
+## Quick Start
 
 See [run.md](run.md) for detailed setup instructions.
 
@@ -135,7 +135,7 @@ docker-compose up -d
 ./mvnw test
 ```
 
-## 📖 API Documentation
+## API Documentation
 
 ### Authentication
 
@@ -228,7 +228,7 @@ docker-compose up -d
 | GET | `/users/{userId}/mentions` | Get user mentions (paginated) | Yes |
 | GET | `/projects/{projectId}/workload` | Get developer workload | Yes |
 
-## 🔐 Authentication
+## Authentication
 
 All protected endpoints require a JWT token in the Authorization header:
 
@@ -244,7 +244,7 @@ curl -X POST http://localhost:8080/auth/login \
   -d '{"username": "admin", "password": "password123"}'
 ```
 
-## 📊 Database Schema
+## Database Schema
 
 ### Tables
 - **users** - User accounts with roles
@@ -259,7 +259,7 @@ curl -X POST http://localhost:8080/auth/login \
 - Ticket → Comments (One-to-Many)
 - User → Comments (One-to-Many as author)
 
-## 🧪 Testing
+## Testing
 
 The project includes:
 - **Unit Tests**: Service layer business logic
@@ -271,7 +271,7 @@ Run all tests:
 ./mvnw test
 ```
 
-## 📝 AI Usage Documentation
+## AI Usage Documentation
 
 See [prompts.md](prompts.md) for detailed documentation on AI agent usage during development.
 
@@ -285,7 +285,7 @@ See [prompts.md](prompts.md) for detailed documentation on AI agent usage during
 - Test implementation
 - Documentation
 
-## 🔧 Configuration
+## Configuration
 
 Main configuration in `src/main/resources/application.yml`:
 
@@ -301,14 +301,14 @@ jwt:
   expiration: 86400000  # 24 hours
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 See [run.md](run.md) for common issues and solutions.
 
-## 📄 License
+## License
 
 This project is created for educational purposes as part of TDP 2026 Home Assignment.
 
-## 👥 Author
+## Author
 
 Developed with assistance from Claude 3.5 Sonnet AI agent.
